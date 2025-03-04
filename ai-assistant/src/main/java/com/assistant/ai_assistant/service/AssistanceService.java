@@ -66,7 +66,8 @@ public class AssistanceService {
         StringBuilder prompt = new StringBuilder();
         switch (request.getOperation()){
             case "summarize":
-                prompt.append("Provide a clear content and concise summary of the following text in a few sentences using bullet points: \n\n");
+                prompt.append("Summarize the following text using bullet points only. \n" +
+                        "Each key point should start with '*'. Do not include any introductory lines or explanations, just the bullet points.\n\n");
                 break;
             case "suggest":
                 prompt.append("Based on the following content: suggest related topics and further reading.\n")

@@ -3,6 +3,7 @@ package com.assistant.ai_assistant.service;
 import com.assistant.ai_assistant.model.AssistanceRequest;
 import com.assistant.ai_assistant.model.GeminiResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -21,6 +22,7 @@ public class AssistanceService {
     private final WebClient webClient;
     private final ObjectMapper objectMapper;
 
+    @Autowired
     public AssistanceService(WebClient.Builder webclient , ObjectMapper objectMapper){
         this.webClient = webclient.build();
         this.objectMapper = objectMapper;
